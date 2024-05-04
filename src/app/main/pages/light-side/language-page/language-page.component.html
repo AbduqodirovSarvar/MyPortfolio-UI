@@ -1,0 +1,15 @@
+<div style="margin-bottom: 100px;">
+  <div class="Language_title">
+    <h3 style="color:blue;font-size: 36px;">Languages</h3>
+  </div>
+    <mat-list *ngFor="let language of languages" class="language">
+      <mat-list-item>
+        <h3>{{language.language.name}}</h3>
+      </mat-list-item>
+      <mat-list-item>
+        <p>{{language.languageLevel}}</p>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+</div>
+

@@ -1,0 +1,23 @@
+<div style="width: 80%; margin-bottom: 100px;">
+  <div>
+    <h3 style="color:blue;font-size: 36px;">Certificates</h3>
+  </div>
+  <mat-list *ngFor="let certificate of certificates">
+    <mat-list-item>
+      <div class="certficate_desc">
+        <p>{{certificate.name}}</p>
+        <p class="desc">{{certificate.issued}}</p>
+      </div>
+      </mat-list-item>
+      <mat-list-item *ngFor="let skill of certificate.skills">
+        {{skill.name}}
+      </mat-list-item>
+      <mat-list-item>
+        <div class="certficate_links">
+          <a target="_blank" href="{{certificate.certificateUrl}}">View certificate</a>
+          <a target="_blank" href="{{certificate.credential}}">Check</a>
+        </div>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+  </mat-list>
+</div>

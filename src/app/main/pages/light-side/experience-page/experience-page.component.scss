@@ -1,0 +1,53 @@
+.experience_title{
+  color: blue;
+  font-size: 36px;
+}
+
+.experience_work
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience_list{
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.experience_top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.experience_top_name{
+  font-size: 24px;
+  margin: 0;
+}
+
+.experience_top_time{
+  background-color: rgb(140, 234, 109);
+  border-radius: 30px;
+  padding: 5px 10px;
+  color: green;
+  margin: 0;
+}
+
+.experience_bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.experience_bottom_div p{
+  font-size: 20px;
+  margin: 0;
+}
+.experience_bottom_div{
+  display: flex;
+  gap: 100px;
+}
+
+.desc{
+  margin: 0;
+}

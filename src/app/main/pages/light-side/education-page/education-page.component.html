@@ -1,0 +1,15 @@
+<div class="main_div">
+  <div class="education_title">
+    <h3 style="color:blue;font-size: 36px;">Educations</h3>
+  </div>
+  <mat-list *ngFor="let education of educations">
+    <mat-list-item>{{education.name}}</mat-list-item>
+    <mat-list-item>
+      <div class="education_bottom">
+        <p>{{education.city}}</p>
+        <p class="desc">{{education.fromDate}} -> {{education.toDate}}</p>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>

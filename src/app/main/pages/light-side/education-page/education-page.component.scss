@@ -1,0 +1,33 @@
+@media screen and (max-width: 1600px){
+  .main_div{
+    list-style: none;
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
+.main_div{
+  margin-bottom: 100px;
+  width: 80%;
+}
+
+.education_title{
+  color: blue;
+  font-size: 36px;
+}
+
+.education_top_name{
+  font-size: 24px;
+  margin: 0;
+}
+
+.education_bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.education_bottom p{
+  font-size: 20px;
+  margin: 0;
+}

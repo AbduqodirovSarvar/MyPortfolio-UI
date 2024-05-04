@@ -1,0 +1,31 @@
+.project_img_card{
+  width: 320px;
+}
+
+.project_title{
+  font-size: 36px;
+  color: blue;
+  align-items: center;
+  text-align: center;
+}
+
+.project_desc{
+  font-size: 24px;
+  align-items: center;
+  text-align: center;
+}
+
+.project_link{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.project{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+

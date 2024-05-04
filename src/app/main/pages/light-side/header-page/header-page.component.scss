@@ -1,0 +1,64 @@
+/* Default styles for the header */
+header {
+  width: 84%; /* Set the width to 80% */
+  margin-left: -2%;
+  background-color: white; /* Set the background color */
+  color: #fff; /* Set the text color */
+  padding: 10px; /* Add padding */
+  display: flex; /* Use flexbox layout */
+  justify-content: space-between; /* Space elements evenly */
+  align-items: center; /* Align items vertically */
+  position: fixed; /* Fix the header at the top of the viewport */
+  top: 0; /* Align the header to the top */
+  z-index: 1000; /* Set a high z-index to ensure it's above other content */
+  border-radius: 10px;
+  margin-bottom: 100px;
+}
+
+/* Style for the links within the header */
+a {
+  color: #fff; /* Set the link text color */
+  text-decoration: none; /* Remove underline */
+  margin-right: 20px; /* Add some space between links */
+}
+
+/* Style for the button within the header */
+button {
+  margin-right: 20px; /* Add some space between the last link and the button */
+  font-size: 16px; /* Set default font size for the button */
+}
+
+/* Style for the social media icons container */
+.header_navbar_socials {
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Align items vertically */
+}
+
+/* Style for individual social media icons */
+.header_navbar_socials_element {
+  margin-right: 10px; /* Add some space between icons */
+}
+
+/* Style for images inside social media icons */
+.header_navbar_socials_element img {
+  width: 30px; /* Set the width of the icons */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 1100px) {
+  header {
+    flex-wrap: wrap; /* Allow header elements to wrap onto multiple lines */
+    justify-content: flex-start; /* Align elements to start */
+    padding: 20px; /* Increase padding for smaller screens */
+  }
+
+  a {
+    margin-right: 10px; /* Reduce margin between links */
+    margin-bottom: 10px; /* Add margin bottom to create space between lines */
+  }
+
+  button {
+    margin-bottom: 10px; /* Add margin bottom to create space between lines */
+    font-size: 14px; /* Reduce font size for smaller screens */
+  }
+}

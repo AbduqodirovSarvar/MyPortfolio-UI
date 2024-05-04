@@ -1,0 +1,23 @@
+<div style="margin-bottom: 100px;width: 80%">
+  <div class="experience_title">
+    <h3 style="color:blue;font-size: 36px;">Experiences</h3>
+  </div>
+  <mat-list *ngFor="let experience of experiences" class="experience">
+    <mat-list-item>
+      <div class="experience_top">
+        <p class="experience_top_name">{{experience.position}}</p>
+        <p class="experience_top_time">{{experience.workType}}</p>
+      </div>
+    </mat-list-item>
+    <mat-list-item>
+      <div class="experience_bottom">
+        <div class="experience_bottom_div">
+          <p>{{experience.companyName}}</p>
+          <p>{{experience.city}}</p>
+        </div>
+        <p class="desc">{{experience.toDate}} -> {{experience.toDate}}</p>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>
