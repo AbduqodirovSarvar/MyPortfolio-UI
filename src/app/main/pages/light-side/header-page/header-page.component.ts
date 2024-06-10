@@ -1,10 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, viewChild } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {Router, RouterLink, RouterOutlet } from '@angular/router';
-import {MatCardModule} from '@angular/material/card'
+import {MatCardModule} from '@angular/material/card';
 import { ElementRef, Renderer2 } from '@angular/core';
+import { AppComponent } from '../../../../app.component';
 
 @Component({
   selector: 'app-header-page',
@@ -15,12 +16,14 @@ import { ElementRef, Renderer2 } from '@angular/core';
 })
 export class HeaderPageComponent {
   // @ViewChild('sc') sc: Scroller;
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
+  @ViewChild('scroll') sc!: ElementRef;
 
   navigateToEducation() {
-    const scrollContainer = this.el.nativeElement;
-    const scrollTo = scrollContainer.scrollHeight - scrollContainer.clientHeight;
-    this.renderer.setProperty(scrollContainer, 'scrollTop', scrollTo);
+    console.log(this.sc.nativeElement);
+    if (this.sc && this.sc.nativeElement) {
+      this.sc.nativeElement.scrollTop = 0;
+    } else {
+      console.error("Scroll element not found or not initialized.");
+    }
   }
-
 }
