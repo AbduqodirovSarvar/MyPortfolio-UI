@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderPageComponent } from './main/pages/light-side/header-page/header-page.component';
 import { HomePageComponent } from './main/pages/light-side/home-page/home-page.component';
@@ -36,6 +36,13 @@ import { LanguagePageComponent } from './main/pages/light-side/language-page/lan
 export class AppComponent implements OnInit {
   title = 'MyPortfolio-UI';
 
+  @ViewChild('scroll') sc!: ElementRef;
+
   ngOnInit(): void {
   }
+
+  // goToCert(){
+  //   console.log(this.sc.nativeElement.scrollHeight);
+  //   this.sc.nativeElement.scrollTop = this.sc.nativeElement.scrollHeight;
+  // }
 }

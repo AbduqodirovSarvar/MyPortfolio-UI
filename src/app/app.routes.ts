@@ -8,8 +8,12 @@ import { ContactPageComponent } from './main/pages/light-side/contact-page/conta
 import { ProjectPageComponent } from './main/pages/light-side/project-page/project-page.component';
 import { ApplicationConfig, NgModule } from '@angular/core';
 import { LanguagePageComponent } from './main/pages/light-side/language-page/language-page.component';
+import { HeaderPageComponent } from './main/pages/light-side/header-page/header-page.component';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
+  {path: "", component: AppComponent},
+  {path: "header", component: HeaderPageComponent},
   {path: "home", component: HomePageComponent},
   {path: "stacks", component: StackPageComponent},
   {path: "experiences", component: ExperiencePageComponent},
