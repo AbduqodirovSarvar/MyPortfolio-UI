@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Project, mockData } from '../../../core/data.types.service';
+import { Project } from '../../../core/data.types.service';
+import { ApiService } from '../../../core/api.service';
 
 @Component({
   selector: 'app-project-page',
@@ -10,5 +11,8 @@ import { Project, mockData } from '../../../core/data.types.service';
   styleUrl: './project-page.component.scss'
 })
 export class ProjectPageComponent {
-  projects: Project[] = mockData.projects;
+  projects: Project[] = [];
+  constructor(private apiService: ApiService){
+    this.projects = apiService.user.projects;
+  }
 }

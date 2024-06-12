@@ -2,7 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-import { Education, mockData } from '../../../core/data.types.service';
+import { Education } from '../../../core/data.types.service';
+import { ApiService } from '../../../core/api.service';
 
 @Component({
   selector: 'app-education-page',
@@ -16,5 +17,8 @@ import { Education, mockData } from '../../../core/data.types.service';
   styleUrl: './education-page.component.scss'
 })
 export class EducationPageComponent {
-  educations: Education[] = mockData.educations;
+  educations: Education[] = [];
+  constructor(private apiService: ApiService){
+    this.educations = apiService.user.educations;
+  }
 }

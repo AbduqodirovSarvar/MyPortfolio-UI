@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { User, mockData } from '../../../core/data.types.service';
+import { User } from '../../../core/data.types.service';
+import { ApiService } from '../../../core/api.service';
 
 @Component({
   selector: 'app-home-page',
@@ -9,8 +10,11 @@ import { User, mockData } from '../../../core/data.types.service';
   styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent {
-  user: User = mockData;
+  constructor(private apiService: ApiService){
+    this.user = apiService.user;
+  }
+  user: User = {} as User;
   currentDate = new Date();
   birthDate = new Date(this.user.birthDay);
-  age: number = this.currentDate.getFullYear() - this.birthDate.getFullYear();
+  age: any = this.currentDate.getFullYear() - this.birthDate.getFullYear();
 }

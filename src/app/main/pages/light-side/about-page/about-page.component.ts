@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { User, mockData } from '../../../core/data.types.service';
+import { User } from '../../../core/data.types.service';
+import { ApiService } from '../../../core/api.service';
 
 @Component({
   selector: 'app-about-page',
@@ -9,5 +10,8 @@ import { User, mockData } from '../../../core/data.types.service';
   styleUrl: './about-page.component.scss'
 })
 export class AboutPageComponent {
-  user: User = mockData;
+  aboutMe: string = "";
+  constructor(private apiService: ApiService){
+    this.aboutMe = apiService.user.aboutMe;
+  }
 }

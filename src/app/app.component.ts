@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { HeaderPageComponent } from './main/pages/light-side/header-page/header-page.component';
 import { HomePageComponent } from './main/pages/light-side/home-page/home-page.component';
 import { PagesModule } from './main/pages/pages.module';
@@ -12,11 +12,15 @@ import { ProjectPageComponent } from './main/pages/light-side/project-page/proje
 import { FooterPageComponent } from './main/pages/light-side/footer-page/footer-page.component';
 import { ContactPageComponent } from './main/pages/light-side/contact-page/contact-page.component';
 import { LanguagePageComponent } from './main/pages/light-side/language-page/language-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './main/core/api.service';
+import { Console } from 'console';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,
+  imports: [
+    RouterOutlet,
     HeaderPageComponent,
     HomePageComponent,
     AboutPageComponent,
@@ -28,17 +32,21 @@ import { LanguagePageComponent } from './main/pages/light-side/language-page/lan
     ProjectPageComponent,
     ContactPageComponent,
     FooterPageComponent,
-    PagesModule
+    PagesModule,
+    HttpClientModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'MyPortfolio-UI';
 
   @ViewChild('scroll') sc!: ElementRef;
 
-  ngOnInit(): void {
+  email: string | null = null;
+
+  constructor(private apiService: ApiService) {
+    this.apiService.getUser(this.email);
   }
 
   // goToCert(){

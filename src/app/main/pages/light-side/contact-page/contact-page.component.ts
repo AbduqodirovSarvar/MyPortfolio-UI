@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../../../core/api.service';
-import { Social, User, mockData } from '../../../core/data.types.service';
+import { Social, User } from '../../../core/data.types.service';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+import { ApiService } from '../../../core/api.service';
 
 @Component({
   standalone: true,
@@ -18,5 +18,8 @@ import { MatDividerModule } from '@angular/material/divider';
 })
 
 export class ContactPageComponent {
-  contacts: Social[] = mockData.socials;
+  contacts: Social[] = [];
+  constructor(private apiService: ApiService){
+    this.contacts = apiService.user.socials;
+  }
 }

@@ -2,7 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-import { Experience, mockData } from '../../../core/data.types.service';
+import { Experience } from '../../../core/data.types.service';
+import { ApiService } from '../../../core/api.service';
 
 @Component({
   selector: 'app-experience-page',
@@ -16,5 +17,8 @@ import { Experience, mockData } from '../../../core/data.types.service';
   styleUrl: './experience-page.component.scss'
 })
 export class ExperiencePageComponent {
-  experiences: Experience[] = mockData.experiences;
+  experiences: Experience[] = [];
+  constructor(private apiService: ApiService){
+    this.experiences = apiService.user.experiences;
+  }
 }

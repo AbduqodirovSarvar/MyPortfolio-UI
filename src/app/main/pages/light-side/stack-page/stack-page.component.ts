@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Skill, mockData } from '../../../core/data.types.service';
+import { Skill } from '../../../core/data.types.service';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+import { ApiService } from '../../../core/api.service';
 
 @Component({
   selector: 'app-stack-page',
@@ -16,5 +17,8 @@ import { MatDividerModule } from '@angular/material/divider';
   styleUrl: './stack-page.component.scss'
 })
 export class StackPageComponent {
- skills: Skill[] = mockData.skills;
+ skills: Skill[] = [];
+ constructor(private apiService: ApiService){
+  this.skills = apiService.user.skills;
+ }
 }
