@@ -8,7 +8,10 @@
       </div>
       <b>{{project.name}}</b>
       <p>{{project.description}}</p>
-      <p *ngFor="let skill of project.skills">skill</p>
+      <ng-container *ngFor="let skill of project?.skills; let i=index">
+        <span *ngIf="i!=0">, {{skill.name}}</span>
+        <span *ngIf="i==0">{{skill.name}}</span>
+      </ng-container>
       <div class="project_link">
         <a href="{{project.urlToSite}}" target="_blank">Live</a>
         <a href="{{project.urlToCode}}" target="_blank">Code</a>

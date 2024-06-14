@@ -7,6 +7,11 @@ export interface Skill {
   createdTime: string;
 }
 
+export interface Enum{
+  id: number;
+  name: string;
+}
+
 export interface Language {
   id: number;
   language: {
@@ -14,7 +19,7 @@ export interface Language {
     name: string;
     createdTime: string;
   };
-  languageLevel: string;
+  languageLevel: Enum;
   createdTime: string;
 }
 
@@ -34,7 +39,7 @@ export interface Experience {
   companyName: string;
   description: string;
   position: string;
-  workType: string;
+  workType: Enum;
   city: string;
   fromDate: string;
   toDate: string;
@@ -56,7 +61,7 @@ export interface Project {
 
 export interface Social {
   id: number;
-  socialNetwork: string;
+  socialNetwork: Enum;
   url: string;
   userId: number;
   createdTime: string;
@@ -80,7 +85,7 @@ export interface User {
   email: string;
   middleName?: string | null;
   birthDay: string;
-  gender: string;
+  gender: Enum;
   profession: string;
   aboutMe: string;
   phoneNumber: string;

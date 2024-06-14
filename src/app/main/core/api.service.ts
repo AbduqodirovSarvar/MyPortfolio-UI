@@ -16,7 +16,8 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getUser(email?: string | null): void {
-    this.http.get<User>(`${this.api}/${email ?? this.defaultEmail}`).subscribe({
+    email = email ?? this.defaultEmail;
+    this.http.get<User>(`${this.api}/${email}`).subscribe({
       next: (response: User) => {
         this.user = response;
       },
@@ -27,6 +28,6 @@ export class ApiService {
   }
 
   private handleError(error: Error): void {
-    console.error('An error occurred', error); // Replace with your error handling logic
+    console.error('An error occurred', error);
   }
 }
