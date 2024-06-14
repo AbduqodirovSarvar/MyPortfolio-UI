@@ -7,12 +7,12 @@ on:
     branches: [ "master" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
+    - name: Check out the repository
+      uses: actions/checkout@v2
+
     - name: Deploy to Server
       uses: appleboy/ssh-action@master
       with:
