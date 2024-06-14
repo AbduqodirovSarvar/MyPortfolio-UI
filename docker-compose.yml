@@ -9,3 +9,8 @@ services:
     restart: always
     ports:
       - "4200:4200"
+    networks:
+      - web-ui
+
+networks:
+  web-ui:
